@@ -62,20 +62,18 @@ Nos exercícios de hoje, será usada uma API que retorna cartas do jogo de Magic
 
 I - Abra o arquivo `tests/magic.test.js`. Nele você encontrará a estrutura inicial dos testes ja montada. Essa estrutura no entanto está incompleta e precisa de ajustes para que a sintaxe do `async/await` seja aplicada de forma correta. Implemente o que falta para que a sintaxe do `async/await` esteja completa.
 
-II - Agora, vamos utilizar a nossa função simulada para pesquisar um novo Magic Card. Para isso, adicione o `id: 130550` como argumento na função `getMagicCardSimulator`. Lembre-se que essa função vai simular o comportamento da função original `getMagicCard`, mas sem executar uma chamada à API.
-
-III - Implemente um teste que verifique se o retorno da função `getMagicCardSimulator` é igual ao objeto `expected`.
+II - Implemente um teste que verifique se o retorno da função `getMagicCardSimulator` é igual ao objeto `expected`.
 ***spoiler-alert***: você pode desestruturar o objeto response e obter diretamente suas propriedades.
 
-IV - Implemente um teste que verifique se a propriedade `types` é do tipo `Array`.
+III - Implemente um teste que verifique se a propriedade `types` é do tipo `Array`.
 
-V - Implemente um teste que verifique se a propriedade `subtypes` possui `length === 2`.
+IV - Implemente um teste que verifique se a propriedade `subtypes` possui `length === 2`.
 
-VI - Implemente um teste que verifique se a propriedade `rarity` possui valor `Uncommon`.
+V - Implemente um teste que verifique se a propriedade `rarity` possui valor `Uncommon`.
 
-VII - Implemente um teste que verifique se a propriedade `name` possui valor `Ancestor's Chosen`.
+VI - Implemente um teste que verifique se a propriedade `name` possui valor `Ancestor's Chosen`.
 
-VIII - Implemente um teste que verifique se a propriedade `manaCost` possui valor `{5}{W}{W}`.
+VII - Implemente um teste que verifique se a propriedade `manaCost` possui valor `{5}{W}{W}`.
 
 ---
 
@@ -84,7 +82,6 @@ VIII - Implemente um teste que verifique se a propriedade `manaCost` possui valo
 ### Antes de começar
 
 * Confirme que você está na branch `exercise-two`, se não estiver, execute os passos descritos no Readme antes de prosseguir.
-* Todas as funções já estão impĺementadas, você precisará se preocupar apenas em testá-las.
 * Dentro da pasta data, você encontrará o arquivo `favoriteCards`, leia e compreenda sua estrutura para realizar os exercícios.
 * A função `getMagicCard` sofreu alterações e agora além de realizar a chamada a API, ela também modifica o arquivo favoriteCards, adicionando um novo card a cada execução.
 * Não se esqueça de atualizar o número de `expect.assertions`, a cada `expect` que você implementar em seus testes.
@@ -98,7 +95,7 @@ Agora temos um arquivo com algumas das cartas preferidas do nosso jogador. Você
 
 I - Implemente um teste que verifique que após a execução da função `getMagicCard`, `favoriteCards` passa a possuir `length === 5`.
 
-II - Implemente um teste que verifique que na última posição do array `favoriteCards` existe um card com o a propriedade name e valor "Beacon of Immortality".
+II - Implemente um teste que verifique que na última posição do array `favoriteCards` existe um card com o a propriedade `name` e valor "Beacon of Immortality".
 
 III - Faça uma nova chamada para a função `getMagicCard`, utilizando o id = '130554' e salvando seu retorno em uma variável. Não se esqueça de colocar o `await`.
 
@@ -112,7 +109,7 @@ Você vai perceber que o teste falhou. Consegue entender porque ele falha? Isso 
 
 VI - Utilizando a função `afterEach` crie uma lógica capaz de restaurar o array `favoriteCards` que faça com que o teste passe.
 
-#### Bônus
+## Bônus
 
 * Este exercício será feito na mesma branch do exercício anterior: `exercise-two`. 
 * Este exercício deve ser realizado após a implementação da função `afterEach`.
@@ -125,6 +122,4 @@ II - Implemente um teste que verifique que o array que você obteve com o `map` 
 ```js
 ['Ancestor\'s Chosen', 'Angel of Mercy', 'Aven Cloudchaser', 'Ballista Squad']
 ```
-
 ---
-
