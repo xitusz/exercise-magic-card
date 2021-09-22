@@ -15,10 +15,11 @@ Vá para a branch master do seu projeto e execute o comando:
 
 Verifique se as seguintes branchs apareceram:
 
-  `exercise-one`
-  `exercise-two`
+  * `exercise-one`
+  * `exercise-two`
 
-- Cada branch dessas será um exercício.
+Cada branch dessas será um exercício.
+
 - Mude para a branch `exercise-one` com o comando `git checkout exercise-one`. É nessa branch que você realizará a solução para o exercício 1, e assim por diante.
 
 Observe o que deve ser feito nas instruções para cada exercício.
@@ -43,9 +44,9 @@ Para cada PR realize esse processo.
 
 ### COMEÇANDO OS EXERCÍCIOS
 
-#### Exercício 1
+Nos exercícios de hoje, será usada uma API que retorna cartas do jogo de Magic: The Gathering. Então, se prepare, jovem, pois neste dia, uma carta será comprada do Grimório e outras serão escolhidas como as favoritas. Está com mana suficiente para esta aventura?
 
-No exercício de hoje você vai aplicar os conhecimentos sobre testes assíncronos com Jest. Para isso, vamos utilizar uma API que retorna os cards do RPG Magic.
+## Exercício 1
 
 ### Antes de começar
 
@@ -53,6 +54,7 @@ No exercício de hoje você vai aplicar os conhecimentos sobre testes assíncron
 * Todas as funções já estão impĺementadas, você precisará se preocupar apenas em testá-las. 
 * A função `trybeSimulator` já está pronta e disponível dentro do arquivo `magic.test.js`, onde você implementará seus testes. Mas **atenção**, você **NÃO** precisará modificá-la.
 * Não se preocupe em entender a estrutura da função `trybeSimulator`, você aprenderá a implementar este tipo de função futuramente no curso.
+* Não se esqueça de atualizar o número de `expect.assertions`, a cada `expect` que você implementar em seus testes.
 
 **Dica de ouro**: leia e entenda cada parte da implementação da função `getMagicCard` que está no arquivo `src/magic.js.` Isso te ajudará a implementar os testes.
 
@@ -77,7 +79,7 @@ VIII - Implemente um teste que verifique se a propriedade `manaCost` possui valo
 
 ---
 
-#### Exercício 2
+## Exercício 2
 
 ### Antes de começar
 
@@ -85,15 +87,44 @@ VIII - Implemente um teste que verifique se a propriedade `manaCost` possui valo
 * Todas as funções já estão impĺementadas, você precisará se preocupar apenas em testá-las.
 * Dentro da pasta data, você encontrará o arquivo `favoriteCards`, leia e compreenda sua estrutura para realizar os exercícios.
 * A função `getMagicCard` sofreu alterações e agora além de realizar a chamada a API, ela também modifica o arquivo favoriteCards, adicionando um novo card a cada execução.
+* Não se esqueça de atualizar o número de `expect.assertions`, a cada `expect` que você implementar em seus testes.
 
 **Dica de ouro**: leia e entenda cada parte da implementação da função `getMagicCard` que está no arquivo `src/magic.js.` Isso te ajudará a implementar os testes.
 
 
 ### Agora mão na massa
 
-Agora temos um arquivo com algumas das cartas preferidas do nosso jogador. Você verificar a sua estrutura no arquivo `data/favoriteCards.js`. Utilizaremos este arquivo para os próximos passos.
+Agora temos um arquivo com algumas das cartas preferidas do nosso jogador. Você pode verificar a sua estrutura no arquivo `data/favoriteCards.js`. Utilizaremos este arquivo para os próximos passos.
 
-I - Implemente um teste que verifique que após a execução da função `getMagicCard`, `favoriteCards` passa a possuir `length === 5`;
+I - Implemente um teste que verifique que após a execução da função `getMagicCard`, `favoriteCards` passa a possuir `length === 5`.
+
+II - Implemente um teste que verifique que na última posição do array `favoriteCards` existe um card com o a propriedade name e valor "Beacon of Immortality".
+
+III - Faça uma nova chamada para a função `getMagicCard`, utilizando o id = '130554' e salvando seu retorno em uma variável. Não se esqueça de colocar o `await`.
+
+IV - Implemente um teste que verifique que após a execução da função `getMagicCard`, `favoriteCards` passa a possuir `length === 6`.
+
+Para os próximos exercícios descomente o teste dentro do escopo do segundo `it`.
+
+V - Após descomentar o teste dentro do segundo `it`, rode os testes. 
+
+Você vai perceber que o teste falhou. Consegue entender porque ele falha? Isso mesmo, a função `getMagicCard` modificou o arquivo `favoriteCards` no escopo do `it` anterior. Desta maneira, para o Jest, o array `favoriteCards` não possui quatro cards, mas sim, seis.
+
+VI - Utilizando a função `afterEach` crie uma lógica capaz de restaurar o array `favoriteCards` que faça com que o teste passe.
+
+#### Bônus
+
+* Este exercício será feito na mesma branch do exercício anterior: `exercise-two`. 
+* Este exercício deve ser realizado após a implementação da função `afterEach`.
+* Implemente o teste solicitado dentro do escopo do segundo `it`.
+
+I - Utilizando a função `map`, crie um array contendo apenas a propriedade `name` de todos os cards presentes no deck original, ou seja, no `favoriteCards`. Este array deve conter quatro nomes e deve ser salvo em uma nova variável.
+
+II - Implemente um teste que verifique que o array que você obteve com o `map` do exercício anterior contém a seguinte estrutura e valores:
+
+```js
+['Ancestor\'s Chosen', 'Angel of Mercy', 'Aven Cloudchaser', 'Ballista Squad']
+```
 
 ---
 
