@@ -82,7 +82,7 @@ VII - Implemente um teste que verifique se a propriedade `manaCost` possui valor
 ### Antes de começar
 
 * Confirme que você está na branch `exercise-two`, se não estiver, execute os passos descritos no Readme antes de prosseguir.
-* Dentro da pasta data, você encontrará o arquivo `favoriteCards`, leia e compreenda sua estrutura para realizar os exercícios.
+* Dentro da pasta `data`, você encontrará o arquivo `favoriteCards`, leia e compreenda sua estrutura para realizar os exercícios.
 * A função `getMagicCard` sofreu alterações e agora além de realizar a chamada a API, ela também modifica o arquivo favoriteCards, adicionando um novo card a cada execução.
 * Não se esqueça de atualizar o número de `expect.assertions`, a cada `expect` que você implementar em seus testes.
 
@@ -107,7 +107,7 @@ V - Após descomentar o teste dentro do segundo `it`, rode os testes.
 
 Você vai perceber que o teste falhou. Consegue entender porque ele falha? Isso mesmo, a função `getMagicCard` modificou o arquivo `favoriteCards` no escopo do `it` anterior. Desta maneira, para o Jest, o array `favoriteCards` não possui quatro cards, mas sim, seis.
 
-VI - Utilizando a função `afterEach` crie uma lógica capaz de restaurar o array `favoriteCards` que faça com que o teste passe.
+VI - Utilizando a função `afterEach` implemente a função `retrievesFavoriteCards` com uma lógica capaz de restaurar o array `favoriteCards` e que faça com que o teste passe. 
 
 ## Bônus
 
