@@ -11,7 +11,7 @@ Após feito o fork, clone o repositório criado para o seu computador.
 Rode o `npm install`.
 
 Vá para a branch master do seu projeto e execute o comando:
-- `git branch`
+- `git branch -a`
 
 Verifique se as seguintes branchs apareceram:
 
@@ -82,7 +82,7 @@ VII - Implemente um teste que verifique se a propriedade `manaCost` possui valor
 ### Antes de começar
 
 * Confirme que você está na branch `exercise-two`, se não estiver, execute os passos descritos no Readme antes de prosseguir.
-* Dentro da pasta data, você encontrará o arquivo `favoriteCards`, leia e compreenda sua estrutura para realizar os exercícios.
+* Dentro da pasta `data`, você encontrará o arquivo `favoriteCards`, leia e compreenda sua estrutura para realizar os exercícios.
 * A função `getMagicCard` sofreu alterações e agora além de realizar a chamada a API, ela também modifica o arquivo favoriteCards, adicionando um novo card a cada execução.
 * Não se esqueça de atualizar o número de `expect.assertions`, a cada `expect` que você implementar em seus testes.
 
