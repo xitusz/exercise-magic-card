@@ -9,7 +9,7 @@ describe(' Testa a função getMagicCard', () => {
 
   it('Testa se um novo card é adicionado a cada execução', async () => {
     expect.assertions();
-    const response = await getMagicCard('130553');
+    await getMagicCard('130553');
 
     // implemente seus testes aqui
 
