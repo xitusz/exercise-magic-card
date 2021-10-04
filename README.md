@@ -97,17 +97,13 @@ I - Implemente um teste que verifique que após a execução da função `getMag
 
 II - Implemente um teste que verifique que na última posição do array `favoriteCards` existe um card com o a propriedade `name` e valor "Beacon of Immortality".
 
-III - Faça uma nova chamada para a função `getMagicCard`, utilizando o id = '130554' e salvando seu retorno em uma variável. Não se esqueça de colocar o `await`.
-
-IV - Implemente um teste que verifique que após a execução da função `getMagicCard`, `favoriteCards` passa a possuir `length === 6`.
-
 Para os próximos exercícios descomente o teste dentro do escopo do segundo `it`.
 
-V - Após descomentar o teste dentro do segundo `it`, rode os testes. 
+III - Após descomentar o teste dentro do segundo `it`, rode os testes. 
 
 Você vai perceber que o teste falhou. Consegue entender porque ele falha? Isso mesmo, a função `getMagicCard` modificou o arquivo `favoriteCards` no escopo do `it` anterior. Desta maneira, para o Jest, o array `favoriteCards` não possui quatro cards, mas sim, seis.
 
-VI - Utilizando a função `afterEach` crie uma lógica capaz de restaurar o array `favoriteCards` que faça com que o teste passe.
+IV - Utilizando a função `afterEach` crie uma lógica capaz de restaurar o array `favoriteCards` que faça com que o teste passe.
 
 ## Bônus
 
