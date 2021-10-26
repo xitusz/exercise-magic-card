@@ -26,6 +26,7 @@ describe(' Testa a função getMagicCard', () => {
     expect(types).toBeInstanceOf(Array);
     expect(subtypes).toHaveLength(2);
     expect(rarity).toEqual('Uncommon');
-    expect(name).toEqual(`Ancestor's Chosen`)
+    expect(name).toEqual(`Ancestor's Chosen`);
+    expect(manaCost).toEqual('{5}{W}{W}');
   });
 });
