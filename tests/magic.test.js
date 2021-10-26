@@ -12,9 +12,17 @@ const expected = {
 describe(' Testa a função getMagicCard', () => {
   it('Deve retornar um objeto com as propriedades esperadas', async () => {
     const getMagicCardSimulator = trybeSimulator(magic, 'getMagicCard');
-    await getMagicCardSimulator('130550');
+    const response = await getMagicCardSimulator('130550');
 
-    // implemente seus testes aqui    
+    const {
+      name,
+      manaCost,
+      types,
+      subtypes,
+      rarity
+    } = response;
+
+    expect(response).toEqual(expected);
    
   });
 });
