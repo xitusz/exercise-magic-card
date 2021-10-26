@@ -23,6 +23,6 @@ describe(' Testa a função getMagicCard', () => {
     } = response;
 
     expect(response).toEqual(expected);
-   
+    expect(types).toBeInstanceOf(Array);
   });
 });
